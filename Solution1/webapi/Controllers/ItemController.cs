@@ -7,7 +7,7 @@ namespace webapi.Controllers
     [Route("[controller]")]
     public class ItemController : ControllerBase
     {
-        private static readonly IEnumerable<ItemModel> items = new[]
+        private static readonly IEnumerable<ItemModel> Items = new[]
         {
             new ItemModel{Id=0, Title="Bob"},
             new ItemModel{Id=1, Title="Joe"},
@@ -16,5 +16,11 @@ namespace webapi.Controllers
             new ItemModel{Id=4, Title="Jamie"},
             new ItemModel{Id=5, Title="Jeff"}
         };
+        [HttpGet("{itemID:int}")]
+        public ItemModel[] Get(int itemID)
+        {
+            ItemModel[] items = Items.Where(i => i.Id == itemID).ToArray();
+            return items;
+        }
     }
 }
