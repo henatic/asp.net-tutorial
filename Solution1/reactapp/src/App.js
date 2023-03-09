@@ -18,7 +18,7 @@ export default class App extends Component {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Look Who Came</th>
+                        <th>Name</th>
                     </tr>
                 </thead>
                 <tbody>
