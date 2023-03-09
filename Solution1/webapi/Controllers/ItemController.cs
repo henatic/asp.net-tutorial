@@ -16,10 +16,10 @@ namespace webapi.Controllers
             new ItemModel{Id=4, Title="Jamie"},
             new ItemModel{Id=5, Title="Jeff"}
         };
-        [HttpGet("{itemID:int}")]
-        public ItemModel[] Get(int itemID)
+        [HttpGet(Name = "GetItems")]
+        public IEnumerable<ItemModel> Get()
         {
-            ItemModel[] items = Items.Where(i => i.Id == itemID).ToArray();
+            ItemModel[] items = Items.ToArray();
             return items;
         }
     }
